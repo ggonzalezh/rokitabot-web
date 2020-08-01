@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -6,22 +6,18 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 
 const styles = makeStyles((theme) => ({
-  menuButton: {
-    marginRight: theme.spacing(2),
-    fontSize: "300px",
-  },
-  tittleRokitaBOT: {
+  mainTitle: {
     color: "white",
     fontWeight: 700,
     fontSize: "1.75em",
-    paddingRight: "25px",
-    borderRight: "3px solid #7289da",
+    paddingRight: 25,
+    borderRight: "3px solid #7289DA",
     textTransform: "uppercase",
-    cursor: 'default'
+    cursor: "default",
   },
   title: {
-    paddingRight: 30,
-    paddingLeft: 30,
+    paddingRight: 0,
+    paddingLeft: 110,
     fontStyle: "normal",
     fontWeight: 700,
   },
@@ -38,14 +34,11 @@ const styles = makeStyles((theme) => ({
     alignSelf: "center",
   },
   selectedMenu: {
-    textDecoration: "underline",
-  },
-  rokitaBotImg: {
-    borderRadius: "100%",
-    width: "60px",
-    height: "60px",
-    marginRight: "20px",
-    border: "2px solid black",
+    backgroundColor: "#1d1f21",
+    padding: "8px",
+    borderRadius: "8px",
+    transitionDuration: ".5s",
+    borderBottom: "3px solid #141618",
   },
 }));
 
@@ -53,9 +46,9 @@ export const Fullscreen = () => {
   const style = styles();
   return (
     <div>
-      <AppBar position="static" className={style.appBar}>
+      <AppBar position={"static"} className={style.appBar}>
         <Toolbar className={style.toolBar}>
-          <Typography variant="h6" className={style.tittleRokitaBOT}>
+          <Typography align={"center"} variant="h6" className={style.mainTitle}>
             {"Rokita-BOT"}
           </Typography>
           <Typography variant="h6" className={style.title}>
@@ -72,20 +65,10 @@ export const Fullscreen = () => {
             <NavLink
               exact
               activeClassName={style.selectedMenu}
-              to="/about"
+              to="/Información"
               className={style.menuLink}
             >
               Información
-            </NavLink>
-          </Typography>
-          <Typography data-micron="bounce" variant="h6" className={style.title}>
-            <NavLink
-              exact
-              activeClassName={style.selectedMenu}
-              to="/suggestion"
-              className={style.menuLink}
-            >
-              F.A.Q
             </NavLink>
           </Typography>
         </Toolbar>
