@@ -65,7 +65,7 @@ export const Fullscreen = () => {
             <NavLink
               exact
               activeClassName={style.selectedMenu}
-              to="/Información"
+              to="/informacion"
               className={style.menuLink}
             >
               Información

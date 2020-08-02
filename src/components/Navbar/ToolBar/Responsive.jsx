@@ -11,13 +11,12 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import LiveHelpIcon from "@material-ui/icons/LiveHelp";
 import HomeIcon from "@material-ui/icons/Home";
-import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import { Toolbar, AppBar } from "@material-ui/core";
 
 const useStyles = makeStyles(() => ({
   items: {
-    width: 250,
+    width: 'auto',
   },
   hide: {
     display: "none",
@@ -37,14 +36,20 @@ const useStyles = makeStyles(() => ({
     alignSelf: "center",
   },
   menuLink: {
-    color: "black",
+    color: "White",
     textDecoration: "none",
   },
   drawerPaper: {
     backgroundColor: "#1d1f21",
-    // backgroundColor: "#1c1e20",
     color: "white",
   },
+  arrow:{
+    textAlign: 'center',
+    color: 'white'
+  },
+  icon: {
+    color: "white"
+  }
 }));
 
 export const Responsive = () => {
@@ -68,32 +73,24 @@ export const Responsive = () => {
       onKeyDown={toggleDrawer(false)}
       className={style.items}
     >
-      <div>
+      <div className={style.arrow}>
         <IconButton onClick={toggleDrawer}>
-          <ChevronRightIcon />
+          <KeyboardArrowUpIcon className={style.arrow}/>
         </IconButton>
       </div>
       <Divider/>
       <List>
         <NavLink className={style.menuLink} exact to="/">
           <ListItem button>
-            <ListItemIcon>
+            <ListItemIcon className={style.icon}>
               <HomeIcon />
             </ListItemIcon>
             <ListItemText primary="Inicio" />
           </ListItem>
         </NavLink>
-        <NavLink className={style.menuLink} exact to="/comandos">
+        <NavLink className={style.menuLink} exact to="/Informacion">
           <ListItem button>
-            <ListItemIcon>
-              <PlaylistPlayIcon />
-            </ListItemIcon>
-            <ListItemText primary="Comandos" />
-          </ListItem>
-        </NavLink>
-        <NavLink className={style.menuLink} exact to="/Información">
-          <ListItem button>
-            <ListItemIcon>
+            <ListItemIcon className={style.icon}>
               <LiveHelpIcon />
             </ListItemIcon>
             <ListItemText primary="Información" />
